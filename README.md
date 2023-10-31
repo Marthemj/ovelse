@@ -1,5 +1,6 @@
 # ovelse
 Progoblig 01
+
 overlay(rectangle(240, 20, "solid", "dark blue"),
   rotate(180,
     overlay(rectangle(20, 180, "solid", "dark blue"),
@@ -20,4 +21,4 @@ fun nordic-flag(inner-cross-h, inner-cross-v, cross-h, cross-v, body):
               overlay(rectangle(40, 180, "solid", cross-v),
                 rectangle(240, 180, "solid", body))))))))
 end 
-nordic-flag( "dark blue", "dark blue", "white", "white", "fire-brick")
+nordic-flag(inner-cross-h, inner-cross-v, cross-h, cross-v, body)
