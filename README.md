@@ -77,11 +77,9 @@ fun nordic-flag(country-code :: String, width :: Number):
   color-blue-nor-fro = C.color(0, 32, 91, 1)
   color-white = C.color(255, 255, 255, 1)
   color-red-nor = C.color(200, 16, 46, 1)
-  color-yellow = C.color(0, 20, 99, 0)
-  # farger for andrec land her ...
-  # color-blue-swe = ...
-  # color-blue-nor-fro ... 
-  # osv.
+  color-yellow = C.color(255, 250, 25, 1)
+  color-blue-se = C.color(10, 50, 155, 5)
+ 
  
   if country-code == "NOR":
     nor-fro(width, color-red-nor-fro, color-blue-nor-fro, color-white)   
@@ -92,9 +90,9 @@ fun nordic-flag(country-code :: String, width :: Number):
   else if country-code == "ISL":
     nor-fro(width, color-blue-nor-fro, color-red-nor-fro, color-white)
   else if country-code == "FÆR":
-    nor-fro(width,color-white, color-red-nor-fro, color-blue-nor-fro)
+    nor-fro(width,color-white, color-red-nor-fro, color-blue-se)
   else if country-code == "SVE": 
-    nor-fro(width,color-blue-nor-fro, color-white, color-blue-nor-fro)
+    nor-fro(width, color-blue-se, color-yellow,  color-blue-se)
   end
   
 end 
