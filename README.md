@@ -11,14 +11,14 @@ overlay(rectangle(240, 40, "solid", "white"),
 
 
 
-#Progoblig 02; ind 01
+# Progoblig 02; ind 01
 import color as C
 
 fun nordic-flag(country-code :: String, width :: Number):
   
   color-red-nor-alternative = C.color(200, 16, 46, 1) 
   
-  # bruker disse fargene for NOR og FRO
+  #bruker disse fargene for NOR og FRO
   color-red-nor-fro = C.color(186, 12, 47, 1)
   color-blue-nor-fro = C.color(0, 32, 91, 1)
   color-white = C.color(255, 255, 255, 1)
@@ -44,12 +44,12 @@ fun nordic-flag(country-code :: String, width :: Number):
 end 
 
 fun nor-fro(width, color1, color2, color3):
-  # hardkoder data for proporsjoner (eventuelt kan hentes fra en database)
+  #hardkoder data for proporsjoner (eventuelt kan hentes fra en database)
   unit-nor-fro-h = 16 # 6-1-2-1-6 (høyde) og 6-1-2-1-12 (lengde)
   unit-nor-fro-w = 22 
-  # her kan geometrien defineres (h - height, w - width)
-  # ubl - upper bottom left (firkanter både oppe og nede)
-  # ubr - upper bottom right 
+  #her kan geometrien defineres (h - height, w - width)
+  #ubl - upper bottom left (firkanter både oppe og nede)
+  #ubr - upper bottom right 
   unit-ubl-h = 6
   unit-ubl-w = 6
   unit-ubr-h = 6
@@ -58,28 +58,28 @@ fun nor-fro(width, color1, color2, color3):
   unit-vertical-w = 2
   unit-horisontal-h = 2
   unit-horisontal-w = unit-nor-fro-w
-  # forutsetter bruke av funksjonen overlay-xy (ikke put-image f.eks.)
+  #forutsetter bruke av funksjonen overlay-xy (ikke put-image f.eks.)
   unit-vertical-dx = 7
   unit-vertical-dy = 0
   unit-horisontal-dx = 0
   unit-horisontal-dy = 7
   
-  # beregninger og tegning (her kan det være mange løsnigner avhening av funksjoner man velger)
+  #beregninger og tegning (her kan det være mange løsnigner avhening av funksjoner man velger)
   ratio = unit-nor-fro-h / unit-nor-fro-w
   height = ratio * width
   
-  # denne utregningen er mye brukt, så lager definisjoner her
+  #denne utregningen er mye brukt, så lager definisjoner her
   unit-h = height / unit-nor-fro-h
   unit-w = width / unit-nor-fro-w
   
-  # alle deler i flagget
+  #alle deler i flagget
   rect-bac = rectangle(width, height, "solid", color3)
   rect-ubl = rectangle(unit-w * unit-ubl-w, unit-h * unit-ubl-h, "solid", color1)
   rect-ubr = rectangle(unit-w * unit-ubr-w, unit-h * unit-ubr-h, "solid", color1)
   rect-ver = rectangle(unit-w * unit-vertical-w, unit-h * unit-vertical-h, "solid", color2)
   rect-hor = rectangle(unit-w * unit-horisontal-w, unit-h * unit-horisontal-h, "solid", color2) 
 
-  # tegneprosessen
+  #tegneprosessen
   scene-0 = overlay-align("middle", "middle", rect-bac, empty-scene(width, height))
   scene-1 = overlay-align("left", "top", rect-ubl, scene-0) 
   scene-2 = overlay-align("left", "bottom", rect-ubl, scene-1)
@@ -123,7 +123,7 @@ nordic-flag("ISL", 220)
 nordic-flag("FÆR", 220)
 nordic-flag("SVE", 220)
 
-#Progoblig 02; ind 02
+# Progoblig 02; ind 02
 
 include shared-gdrive("dcic-2021", "1wyQZj_L0qqV9Ekgr9au6RX2iqt2Ga8Ep")
 include gdrive-sheets
