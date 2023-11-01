@@ -46,6 +46,25 @@ where:
   energi-to-number("48") is 48
 end
 
+transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
+
+
+fun bil():
+  energy-per-day = (( 50 / 10) *  10)
+  energy-per-day
+end
+
+bil()
+
+fun sum-on-energi():
+  t = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
+
+  sum(t, "energi")
+end
+sum-on-energi()
+
+sum-on-energi() + bil()
+
 FLAGG
 import color as C
 
