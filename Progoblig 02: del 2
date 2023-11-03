@@ -35,12 +35,22 @@ fun bil():
 end
 
 bil()
+fun add-bil(value :: Number) -> Number:
+  if value == 0:
+    bil()
+  else:
+    value
+  end
+end
 
-fun sum-energi():
+
+fun sum-on-energi():
   t = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
   sum(t, "energi")
 end
-sum-energi() + bil()
+sum-on-energi() + bil()
 
-bar-chart(ny-tabell, "komponent", "energi")
+nynytabell = transform-column(ny-tabell, "energi", add-bil)
+
+bar-chart(nynytabell, "komponent", "energi")
 
